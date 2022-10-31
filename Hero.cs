@@ -21,6 +21,8 @@ public class Hero
         Console.WriteLine($"{Name} bites {dragon.Name}...");
         Random rand = new Random();
         double damage = rand.Next(1,5);
+        Console.WriteLine();
+        Console.WriteLine();
         Console.WriteLine($"{dragon.Name} has taken {damage} damage, ouch!");
         return damage;
     }
@@ -48,7 +50,4 @@ public class Hero
             Console.WriteLine($"У героя {Name} появился {inventary.Name} с уроном {inventary.Damage}");
         }
     }
-
-
-
 }
