@@ -42,6 +42,15 @@ public class Hero
         return HP;
     }
 
+    public void Heals()
+    { 
+        Random rand = new Random();
+        int giveHeals = rand.Next(10,30);
+        HP += giveHeals;
+        Console.WriteLine($"{Name} лечится, к здоровью прибалвяется {giveHeals}");
+        Console.WriteLine($"У {Name} уровень здоровья: {HP}");
+    }
+
     public void AddInInventory(Weapon weapon)
     {
         Inventory.Add(weapon);

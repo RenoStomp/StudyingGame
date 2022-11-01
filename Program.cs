@@ -1,8 +1,8 @@
 ﻿using Meruert;
 
-Dragon dragon = new Dragon("Smaug", 100);
+//Dragon dragon = new Dragon("Smaug", 100);
 
-//Hero Vasya = new Hero("Vasya",100);
+Hero Vasya = new Hero("Vasya", 100);
 //Hero Dima = new Hero("Dima", 100);
 //Dragon Smaug = new Dragon("Smaug", 500);
 //Dragon Sartration = new Dragon("Sartration", 1000);
@@ -18,6 +18,8 @@ Dragon dragon = new Dragon("Smaug", 100);
 
 //double thirdAttack = Sartration.Incinerate(Dima);
 //Dima.TakeDamage(secondAttack);
+
+Vasya.Heals();
 
 
 
