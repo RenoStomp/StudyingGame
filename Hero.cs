@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 namespace Meruert;
 
 public class Hero
@@ -10,10 +12,48 @@ public class Hero
 
     public List<Armor> Armor { get; set; }
 
-    public Hero(string name, double hp)
+    //hgfdhtshfncnbcghfdg
+    public Hero()
     {
+        string name;
+        int hp;
+
+        try
+        {
+            Console.Write("Input name of your hero: ");
+            name = Console.ReadLine();
+
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new Exception("Name can't be empty");
+
+            }
+            if (char.IsLower(name[0]))
+            {
+                throw new Exception("Name needs first upper case letter");
+            }
+
+            Console.Write("Input HP amount of your hero: ");
+            if (!int.TryParse(Console.ReadLine(), out hp))
+            {
+                throw new Exception("HP must be number");
+            }
+            if (hp <= 0)
+            {
+                throw new ArgumentException("HP can't be lower then 1");
+            }
+
+
+        }
+        finally
+        {
+            Console.WriteLine();
+            Console.WriteLine("End of hero setting up");
+        }
+
         Name = name;
         HP = hp;
+        
     }
 
     public double Bite(Dragon dragon)
