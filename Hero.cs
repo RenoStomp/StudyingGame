@@ -12,7 +12,7 @@ public class Hero
 
     public List<Armor> Armor { get; set; }
 
-    //hgfdhtshfncnbcghfdg
+    //hgfdhtshfncnbcghfdgnmjdsnflksd
     public Hero()
     {
         string name;
