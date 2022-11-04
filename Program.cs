@@ -19,7 +19,7 @@ Hero Vasya = new Hero();
 //double thirdAttack = Sartration.Incinerate(Dima);
 //Dima.TakeDamage(secondAttack);
 
-Vasya.Heals();
+//Vasya.Heals();
 
 
 

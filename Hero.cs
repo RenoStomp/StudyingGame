@@ -12,48 +12,54 @@ public class Hero
 
     public List<Armor> Armor { get; set; }
 
-    //hgfdhtshfncnbcghfdgnmjdsnflksd
     public Hero()
     {
-        string name;
-        int hp;
+        string name = "";
+        int hp = 0;
 
-        try
+        while (name.Length < 1 || char.IsLower(name[0]))
         {
             Console.Write("Input name of your hero: ");
             name = Console.ReadLine();
 
-            if (string.IsNullOrEmpty(name))
+            try
             {
-                throw new Exception("Name can't be empty");
+                if (string.IsNullOrEmpty(name))
+                {
+                    throw new Exception("Name can't be empty");
 
+                }
+                if (char.IsLower(name[0]))
+                {
+                    throw new Exception("Name needs first upper case letter");
+                }
             }
-            if (char.IsLower(name[0]))
+            catch (Exception e)
             {
-                throw new Exception("Name needs first upper case letter");
+                Console.WriteLine(e.Message);
             }
-
-            Console.Write("Input HP amount of your hero: ");
-            if (!int.TryParse(Console.ReadLine(), out hp))
-            {
-                throw new Exception("HP must be number");
-            }
-            if (hp <= 0)
-            {
-                throw new ArgumentException("HP can't be lower then 1");
-            }
-
-
+            Name = name;
         }
-        finally
+
+        while (hp < 100)
         {
-            Console.WriteLine();
-            Console.WriteLine("End of hero setting up");
+            Console.Write("Input HP amount of your hero: ");
+            int.TryParse(Console.ReadLine(), out hp);
+            try
+            {
+                if (hp < 100)
+                {
+                    throw new ArgumentException("HP can't be lower then 100 and must be a number");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            HP = hp;
         }
-
-        Name = name;
-        HP = hp;
-        
+        Console.WriteLine();
+        Console.WriteLine("End of hero setting up");
     }
 
     public double Bite(Dragon dragon)
