@@ -38,8 +38,8 @@ public class Hero
             {
                 Console.WriteLine(e.Message);
             }
-            Name = name;
         }
+        Name = name;
 
         while (hp < 100)
         {
@@ -56,8 +56,9 @@ public class Hero
             {
                 Console.WriteLine(e.Message);
             }
-            HP = hp;
         }
+        HP = hp;
+
         Console.WriteLine();
         Console.WriteLine("End of hero setting up");
     }
